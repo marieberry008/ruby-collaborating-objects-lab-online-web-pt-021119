@@ -1,4 +1,4 @@
-require "pry"
+# require "pry"
 
 class MP3Importer
   attr_accessor :path
@@ -12,7 +12,7 @@ class MP3Importer
     #then removes the directory part of the string
     def files
       @files = Dir.glob("#{@path}/*.mp3").collect do |file|
-        binding.pry
+        # binding.pry
         file.gsub("#{@path}/", "")
       end
     end
