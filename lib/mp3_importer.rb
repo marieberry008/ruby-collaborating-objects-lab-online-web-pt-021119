@@ -1,3 +1,5 @@
+# require "pry"
+
 class MP3Importer
   attr_accessor :path
 
@@ -9,7 +11,10 @@ class MP3Importer
     #files turns the files paths into a string
     #then removes the directory part of the string
     def files
-      @files = Dir.glob("#{@path}/*.mp3").collect{ |file| file.gsub("#{@path}/", "") }
+      @files = Dir.glob("#{@path}/*.mp3").collect do |file|
+        # binding.pry
+        file.gsub("#{@path}/", "")
+      end
     end
 
     # #import takes each normalized filename and sends it to the Song class #new_by_filename
