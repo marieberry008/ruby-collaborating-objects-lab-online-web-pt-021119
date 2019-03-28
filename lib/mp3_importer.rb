@@ -4,7 +4,6 @@ class MP3Importer
   attr_accessor :path
 
   def initialize(path)
-    binding.pry
     @path = path
   end
 
@@ -12,6 +11,7 @@ class MP3Importer
     #files turns the files paths into a string
     #then removes the directory part of the string
     def files
+      binding.pry
       @files = Dir.glob("#{@path}/*.mp3").collect{ |file| file.gsub("#{@path}/", "") }
     end
 
